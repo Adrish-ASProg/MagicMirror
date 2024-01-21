@@ -63,12 +63,10 @@ Temporary Items
 !/modules/default/**
 !/modules/README.md**
 
-# Ignore changes to the custom css files.
-/css/custom.css
-
-# Ignore users config file but keep the sample.
-/config/*
-!/config/config.js.sample
+# Ignore generated config files and env
+/config/config.js
+/config/config.js-old
+/config/config.env
 
 # Vim
 ## swap
