@@ -1,34 +1,34 @@
 let config = {
-	address: "localhost",
-	port: 8080,
-	basePath: "/",
-	ipWhitelist: ["127.0.0.1", "::ffff:127.0.0.1", "::1"],
+  address: "localhost",
+  port: 8080,
+  basePath: "/",
+  ipWhitelist: ["127.0.0.1", "::ffff:127.0.0.1", "::1"],
 
-	useHttps: false,
-	httpsPrivateKey: "",
-	httpsCertificate: "",
+  useHttps: false,
+  httpsPrivateKey: "",
+  httpsCertificate: "",
 
-	language: "fr",
-	locale: "fr-FR",
-	logLevel: ["INFO", "LOG", "WARN", "ERROR"],
-	timeFormat: 24,
-	units: "metric",
+  language: "fr",
+  locale: "fr-FR",
+  logLevel: ["INFO", "LOG", "WARN", "ERROR"],
+  timeFormat: 24,
+  units: "metric",
 
-	modules: [
-		{ module: "alert" },
-		{
-			module: "updatenotification",
-			position: "top_bar"
-		},
-		{
-			module: "clock",
-			position: "top_left"
-		},
-		{
-			module: "calendar",
-			header: "À venir",
-			position: "top_left",
-			config: {
+  modules: [
+    { module: "alert" },
+    {
+      module: "updatenotification",
+      position: "top_bar"
+    },
+    {
+      module: "clock",
+      position: "top_left"
+    },
+    {
+      module: "calendar",
+      header: "À venir",
+      position: "top_left",
+      config: {
         broadcastEvents: false,
         fetchInterval: 15 * 60 * 1000, // ms (15mn)
         hideDuplicates: false,
@@ -37,7 +37,7 @@ let config = {
         showLocation: true,
         wrapEvents: true,
         wrapLocationEvents: true,
-				calendars: [
+        calendars: [
           {
             excludedEvents: ["Daily Meet"],
             symbol: "calendar-check",
@@ -47,60 +47,62 @@ let config = {
             symbol: "calendar-check",
             url: "${CALENDAR_URL_2}"
           }
-				]
-			}
-		},
-		{
-			module: "weather",
-			position: "top_right",
-			config: {
-				weatherProvider: "openweathermap",
-				type: "current",
-        location: "${WEATHER_LOCATION_NAME}",
-				locationID: "${WEATHER_LOCATION_ID}", // http://bulk.openweathermap.org/sample/city.list.json.gz
-				apiKey: "${OPENWEATHER_API_KEY}"
-			}
-		},
-		{
-			module: "weather",
-			position: "top_right",
-			header: "Weather Forecast",
-			config: {
-				weatherProvider: "openweathermap",
-				type: "forecast",
-				location: "${WEATHER_LOCATION_NAME}",
-				locationID: "${WEATHER_LOCATION_ID}", // http://bulk.openweathermap.org/sample/city.list.json.gz
-				apiKey: "${OPENWEATHER_API_KEY}"
-			}
-		},
-		{
-			module: "newsfeed",
-			position: "bottom_bar",
-			config: {
-				feeds: [
-					{
-						title: "${RSS_FEED_TITLE}",
-						url: "${RSS_FEED_URL}"
-					}
-				],
-				showSourceTitle: true,
-				showPublishDate: true,
-				broadcastNewsFeeds: true,
-				broadcastNewsUpdates: true
-			}
-		},
+        ]
+      }
+    },
     {
-      module: 'MMM-BackgroundSlideshow',
-      position: 'fullscreen_below',
+      module: "weather",
+      position: "top_right",
       config: {
-        imagePaths: ['modules/MMM-BackgroundSlideshow/exampleImages/'],
+        weatherProvider: "openweathermap",
+        type: "current",
+        location: "${WEATHER_LOCATION_NAME}",
+        locationID: "${WEATHER_LOCATION_ID}", // http://bulk.openweathermap.org/sample/city.list.json.gz
+        apiKey: "${OPENWEATHER_API_KEY}"
+      }
+    },
+    {
+      module: "weather",
+      position: "top_right",
+      header: "Weather Forecast",
+      config: {
+        weatherProvider: "openweathermap",
+        type: "forecast",
+        location: "${WEATHER_LOCATION_NAME}",
+        locationID: "${WEATHER_LOCATION_ID}", // http://bulk.openweathermap.org/sample/city.list.json.gz
+        apiKey: "${OPENWEATHER_API_KEY}"
+      }
+    },
+    {
+      module: "newsfeed",
+      position: "bottom_bar",
+      config: {
+        feeds: [
+          {
+            title: "${RSS_FEED_TITLE}",
+            url: "${RSS_FEED_URL}"
+          }
+        ],
+        showSourceTitle: true,
+        showPublishDate: true,
+        broadcastNewsFeeds: true,
+        broadcastNewsUpdates: true
+      }
+    },
+    {
+      module: "MMM-BackgroundSlideshow",
+      position: "fullscreen_below",
+      config: {
+        imagePaths: ["modules/MMM-BackgroundSlideshow/exampleImages/"],
         transitionImages: false,
         randomizeImageOrder: true,
         slideshowSpeed: 30 * 1000 // ms (30s)
       }
     }
-	]
+  ]
 };
 
 /*************** DO NOT EDIT THE LINE BELOW ***************/
-if (typeof module !== "undefined") { module.exports = config; }
+if (typeof module !== "undefined") {
+  module.exports = config;
+}
