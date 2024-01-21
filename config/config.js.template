@@ -26,21 +26,29 @@ let config = {
 		},
 		{
 			module: "calendar",
-			header: "US Holidays",
+			header: "À venir",
 			position: "top_left",
 			config: {
+        broadcastEvents: false,
+        fetchInterval: 15 * 60 * 1000, // ms (15mn)
+        hideDuplicates: false,
+        maxTitleLength: 50,
+        nextDaysRelative: true,
+        showLocation: true,
+        wrapEvents: true,
+        wrapLocationEvents: true,
 				calendars: [
-					{
-						fetchInterval: 7 * 24 * 60 * 60 * 1000,
-						symbol: "calendar-check",
-						url: "https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics"
-					}
+          {
+            excludedEvents: ["Daily Meet"],
+            symbol: "calendar-check",
+            url: "${CALENDAR_URL}"
+          },
+          {
+            symbol: "calendar-check",
+            url: "${CALENDAR_URL_2}"
+          }
 				]
 			}
-		},
-		{
-			module: "compliments",
-			position: "lower_third"
 		},
 		{
 			module: "weather",
@@ -86,8 +94,9 @@ let config = {
       position: 'fullscreen_below',
       config: {
         imagePaths: ['modules/MMM-BackgroundSlideshow/exampleImages/'],
-        transitionImages: true,
-        randomizeImageOrder: true
+        transitionImages: false,
+        randomizeImageOrder: true,
+        slideshowSpeed: 30 * 1000 // ms (30s)
       }
     }
 	]
