@@ -20,14 +20,38 @@ let config = {
       module: "updatenotification",
       position: "top_bar"
     },
+
+    {
+      module: "weather",
+      position: "top_left",
+      config: {
+        weatherProvider: "openweathermap",
+        type: "current",
+        location: "${WEATHER_LOCATION_NAME}",
+        locationID: "${WEATHER_LOCATION_ID}", // http://bulk.openweathermap.org/sample/city.list.json.gz
+        apiKey: "${OPENWEATHER_API_KEY}"
+      }
+    },
+    {
+      module: "weather",
+      position: "top_left",
+      header: "Weather Forecast",
+      config: {
+        weatherProvider: "openweathermap",
+        type: "forecast",
+        location: "${WEATHER_LOCATION_NAME}",
+        locationID: "${WEATHER_LOCATION_ID}", // http://bulk.openweathermap.org/sample/city.list.json.gz
+        apiKey: "${OPENWEATHER_API_KEY}"
+      }
+    },
     {
       module: "clock",
-      position: "top_left"
+      position: "top_center"
     },
     {
       module: "calendar",
       header: "À venir",
-      position: "top_left",
+      position: "bottom_left",
       config: {
         broadcastEvents: false,
         fetchInterval: 15 * 60 * 1000, // ms (15mn)
@@ -48,29 +72,6 @@ let config = {
             url: "${CALENDAR_URL_2}"
           }
         ]
-      }
-    },
-    {
-      module: "weather",
-      position: "top_right",
-      config: {
-        weatherProvider: "openweathermap",
-        type: "current",
-        location: "${WEATHER_LOCATION_NAME}",
-        locationID: "${WEATHER_LOCATION_ID}", // http://bulk.openweathermap.org/sample/city.list.json.gz
-        apiKey: "${OPENWEATHER_API_KEY}"
-      }
-    },
-    {
-      module: "weather",
-      position: "top_right",
-      header: "Weather Forecast",
-      config: {
-        weatherProvider: "openweathermap",
-        type: "forecast",
-        location: "${WEATHER_LOCATION_NAME}",
-        locationID: "${WEATHER_LOCATION_ID}", // http://bulk.openweathermap.org/sample/city.list.json.gz
-        apiKey: "${OPENWEATHER_API_KEY}"
       }
     },
     {
