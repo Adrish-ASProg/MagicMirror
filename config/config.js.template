@@ -49,6 +49,39 @@ let config = {
       position: "top_center"
     },
     {
+      module: "MMM-soccer",
+      position: "top_right",
+      config: {
+        api_key: "${FOOTBALL_DATA_API_KEY}",
+        show: ["FL1", "PD"],
+        colored: true,
+        updateInterval: 20, // seconds
+        matchType: "league",
+        showMatches: true,
+        showTables: true
+      }
+    },
+
+    {
+      module: "MMM-soccer",
+      position: "middle_center",
+      config: {
+        api_key: "${FOOTBALL_DATA_API_KEY}",
+        show: ["CL", "FL1", "PD"],
+        colored: true,
+        updateInterval: 30 * 60, // seconds (30mn)
+        numberOfNextMatches: 5,
+        focus_on: {
+          PD: "Real Madrid CF",
+          FL1: "Lille OSC"
+        },
+        matchType: "next",
+        showMatches: true,
+        showTables: false
+      }
+    },
+
+    {
       module: "calendar",
       header: "À venir",
       position: "bottom_left",
