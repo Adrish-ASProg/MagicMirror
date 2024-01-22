@@ -57,7 +57,7 @@ let config = {
         colored: true,
         updateInterval: 20, // seconds
         matchType: "league",
-        showMatches: true,
+        showMatches: false,
         showTables: true
       }
     },
@@ -67,15 +67,10 @@ let config = {
       position: "middle_center",
       config: {
         api_key: "${FOOTBALL_DATA_API_KEY}",
-        show: ["CL", "FL1", "PD"],
+        show: ["FL1", "PD"],
         colored: true,
-        updateInterval: 30 * 60, // seconds (30mn)
-        numberOfNextMatches: 5,
-        focus_on: {
-          PD: "Real Madrid CF",
-          FL1: "Lille OSC"
-        },
-        matchType: "next",
+        updateInterval: 10, // seconds
+        matchType: "league",
         showMatches: true,
         showTables: false
       }
@@ -90,6 +85,7 @@ let config = {
         fetchInterval: 15 * 60 * 1000, // ms (15mn)
         hideDuplicates: false,
         maxTitleLength: 50,
+        maximumEntries: 7,
         nextDaysRelative: true,
         showLocation: true,
         wrapEvents: true,
@@ -123,6 +119,7 @@ let config = {
         broadcastNewsUpdates: true
       }
     },
+
     {
       module: "MMM-BackgroundSlideshow",
       position: "fullscreen_below",
