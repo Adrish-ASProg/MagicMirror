@@ -124,7 +124,7 @@ let config = {
       module: "MMM-BackgroundSlideshow",
       position: "fullscreen_below",
       config: {
-        imagePaths: ["modules/MMM-BackgroundSlideshow/exampleImages/"],
+        imagePaths: ["backgrounds"],
         transitionImages: false,
         randomizeImageOrder: true,
         slideshowSpeed: 30 * 1000 // ms (30s)
