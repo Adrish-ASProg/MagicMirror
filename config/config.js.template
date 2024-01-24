@@ -63,20 +63,6 @@ let config = {
     },
 
     {
-      module: "MMM-soccer",
-      position: "middle_center",
-      config: {
-        api_key: "${FOOTBALL_DATA_API_KEY}",
-        show: ["FL1", "PD"],
-        colored: true,
-        updateInterval: 10, // seconds
-        matchType: "league",
-        showMatches: true,
-        showTables: false
-      }
-    },
-
-    {
       module: "calendar",
       header: "À venir",
       position: "bottom_left",
