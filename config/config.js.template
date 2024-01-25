@@ -52,7 +52,7 @@ let config = {
       module: "MMM-soccer",
       position: "top_right",
       config: {
-        api_key: "${FOOTBALL_DATA_API_KEY}",
+        apiKey: "${FOOTBALL_DATA_API_KEY}",
         show: ["FL1", "PD"],
         focus_on: {
           "FL1": "Lille OSC",
