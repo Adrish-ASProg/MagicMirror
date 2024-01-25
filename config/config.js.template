@@ -54,6 +54,10 @@ let config = {
       config: {
         api_key: "${FOOTBALL_DATA_API_KEY}",
         show: ["FL1", "PD"],
+        focus_on: {
+          "FL1": "Lille OSC",
+          "PD": "Real Madrid CF"
+        },
         colored: true,
         updateInterval: 20, // seconds
         matchType: "league",
