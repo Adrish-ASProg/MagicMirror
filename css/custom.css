@@ -10,3 +10,49 @@ body {
   flex-direction: row;
   justify-content: center;
 }
+
+
+.MMM-SmartTouch {
+  position: absolute;
+  right: 0;
+}
+
+.MMM-SmartTouch .st-container {
+  position: static;
+  gap: 12px;
+}
+
+.MMM-SmartTouch .st-container__standby-button {
+  width: 40px;
+  height: 40px;
+}
+
+.MMM-SmartTouch .st-container__standby-button span {
+  margin: 0;
+  width: 36px;
+  height: 36px;
+}
+
+.MMM-SmartTouch #st-menu-toggle {
+  margin: 0;
+  gap: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.st-container__menu-toggle div {
+  width: 80%;
+  margin: 0;
+}
+
+.st-container__menu-toggle.show div {
+  width: 100%;
+}
+
+.MMM-SmartTouch .st-container__menu-toggle.show .st-toggle__bar_one {
+  transform: rotate(45deg) translate(9px, 9px);
+}
+
+.MMM-SmartTouch .st-container__menu-toggle.show .st-toggle__bar_three {
+  transform: rotate(-45deg) translate(8px, -8px);
+}

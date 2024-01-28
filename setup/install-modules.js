@@ -2,7 +2,8 @@ const shell = require("shelljs");
 
 const modules = [
 	{ name: "MMM-BackgroundSlideshow", url: "https://github.com/darickc/MMM-BackgroundSlideshow" },
-	{ name: "MMM-soccer", url: "https://github.com/Adrish-ASProg/MMM-soccer" }
+	{ name: "MMM-soccer", url: "https://github.com/Adrish-ASProg/MMM-soccer" },
+	{ name: "MMM-SmartTouch", url: "https://github.com/EbenKouao/MMM-SmartTouch" },
 ];
 
 modules.forEach(module => installModule(module.name, module.url));

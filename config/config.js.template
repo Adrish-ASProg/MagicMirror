@@ -94,6 +94,10 @@ let config = {
       }
     },
     {
+      module: "MMM-SmartTouch",
+      position: "bottom_right"
+    },
+    {
       module: "newsfeed",
       position: "bottom_bar",
       config: {
